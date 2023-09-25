@@ -1,0 +1,380 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+:root {
+  /* ============= Colors ============= */
+
+  /* Primary
+   ------- */
+
+  --marine-blue: hsl(213, 96%, 18%);
+  --purplish-blue: hsl(243, 100%, 62%);
+  --pastel-blue: hsl(228, 100%, 84%);
+  --light-blue: hsl(206, 94%, 87%);
+  --strawberry-red: hsl(354, 84%, 57%);
+  /* 
+    Neutral
+    ------- */
+
+  --cool-gray: hsl(231, 11%, 63%);
+  --light-gray: hsl(229, 24%, 87%);
+  --magnolia: hsl(217, 100%, 97%);
+  --alabaster: hsl(231, 100%, 99%);
+  --white: hsl(0, 0%, 100%);
+
+  /* ================== Other Variables ============== */
+  --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --transition: all 0.3s ease-in-out;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+  background: var(--magnolia);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 3.052rem;
+}
+
+h2 {
+  font-size: 2.441rem;
+}
+
+h3 {
+  font-size: 1.953rem;
+}
+
+h4 {
+  font-size: 1.563rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+small,
+.text_small {
+  font-size: 0.8rem;
+}
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+img {
+  width: 100%;
+  display: block;
+}
+button {
+  cursor: pointer;
+}
+/* =========== Project CSS ============== */
+
+.container {
+  position: relative;
+  min-height: 115vh;
+  overflow: hidden;
+}
+.container--position {
+  position: absolute;
+  top: 6rem;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  /* transform: translateY(-130%); */
+  /* border: 1px solid black; */
+}
+.title {
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--marine-blue);
+}
+.desc {
+  margin: 0;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  color: var(--cool-gray);
+}
+.btn__container {
+  position: absolute;
+  /* border: 1px solid magenta; */
+  background-color: var(--alabaster);
+  bottom: -1rem;
+  left: -1rem;
+  right: -1rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+.btn__container--multiple {
+  justify-content: space-between;
+}
+.btn {
+  padding: 0.75rem 1rem;
+  text-transform: capitalize;
+  background-color: var(--marine-blue);
+  border: none;
+  color: var(--white);
+  font-family: inherit;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  transition: var(--transition);
+}
+.btn:hover {
+  background-color: var(--purplish-blue);
+}
+.prev__btn {
+  background-color: transparent;
+  border: none;
+  color: var(--cool-gray);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  transition: var(--transition);
+}
+
+.prev__btn:hover {
+  color: var(--marine-blue);
+}
+/* Progress 
+   -------- */
+.progress {
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 75%;
+  width: 100%;
+
+  background-image: url("/bg-sidebar-mobile.svg");
+  background-size: cover;
+}
+.progress__info {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.progress__index {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--magnolia);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--magnolia);
+  font-weight: 500;
+}
+.progress__index--active {
+  background-color: var(--magnolia);
+  color: var(--marine-blue);
+}
+.progress__body {
+  display: none;
+}
+
+/* Personal Info
+  -------------- */
+
+.card {
+  padding: 2rem 1.5rem;
+  background-color: var(--alabaster);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.personal-info__row:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+.personal-info__label {
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  color: var(--marine-blue);
+  font-weight: 500;
+}
+.personal-info__input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: transparent;
+  border: 1px solid var(--light-gray);
+  border-radius: 3px;
+  outline: none;
+}
+::placeholder {
+  letter-spacing: 1px;
+  font-family: inherit;
+  font-weight: 700;
+  color: var(--cool-gray);
+}
+
+/* Plan
+   ---- */
+.plans {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.plan__item {
+  border: 1px solid var(--light-gray);
+  padding: 1rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.plan__item:hover {
+  border: 1px solid var(--marine-blue);
+}
+.plan__item * {
+  margin: 0;
+}
+
+.plan__icon {
+  width: 50px;
+}
+.plan__name {
+  text-transform: capitalize;
+  font-size: 1rem;
+}
+
+.plan__duration {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--magnolia);
+  border-radius: 5px;
+}
+.plan__duration-text {
+  margin-bottom: 0;
+  text-transform: capitalize;
+  color: var(--marine-blue);
+  font-weight: 500;
+}
+.plan__duration-text--active {
+  color: var(--cool-gray);
+}
+
+.plan__duration-toggle {
+  width: 50px;
+  height: 20px;
+  border-radius: 50px;
+  background-color: var(--marine-blue);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 4px;
+  cursor: pointer;
+}
+.plan__duration-toggler {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--alabaster);
+}
+
+@media (min-width: 900px) {
+  .container {
+    background-color: var(--alabaster);
+    width: 90vw;
+    max-width: 1000px;
+    margin: 5rem auto;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+  }
+  .progress {
+    padding: 1rem 1.5rem;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    bottom: 1rem;
+    width: 25%;
+    background-image: url("/bg-sidebar-desktop.svg");
+    background-size: cover;
+  }
+  .progress__info {
+    flex-direction: column;
+  }
+  .progress__item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .progress__body {
+    display: block;
+  }
+  .progress__header,
+  .progress__desc {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500px;
+  }
+  .progress__header {
+    color: var(--cool-gray);
+  }
+  .progress__desc {
+    color: var(--magnolia);
+  }
+
+  .container--position {
+    border: 1px solid var(--light-gray);
+    border-radius: 0 5px 5px 0;
+    left: 30%;
+    top: 1rem;
+    padding-top: 3rem;
+  }
+
+  .card {
+    padding: 2rem 1.5rem;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: var(--alabaster);
+    border-radius: 10px;
+    box-shadow: none;
+  }
+  .btn__container {
+    right: 7rem;
+    left: 7rem;
+    bottom: 2rem;
+  }
+  .plans {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .plan__item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
